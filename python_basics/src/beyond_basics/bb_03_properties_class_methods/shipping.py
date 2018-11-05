@@ -116,6 +116,13 @@ class HeatedRefrigeratedShippingContainer(RefrigeratedShippingContainer):
         # Unfortunately it is not possible
         # super()._celcius = value;  # let the max temperature to be validated by super class
         RefrigeratedShippingContainer.celcius.fset(self, value)
+        
+    #@RefrigeratedShippingContainer.celcius.setter- So that we need not to take celcius 
+    #Hence template method design pattern to set
+    def _set_celcius(self, value):
+        if value < HeatedRefrigeratedShippingContainer.MIN_CELCIUS:
+            raise ValueError('Temperature too cold!');
+        super()._set_celcius(value);
 
 
 s = ShippingContainer('MCA', 3, [1, 2, 3])

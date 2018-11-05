@@ -101,3 +101,28 @@ def enclosing_msg():
 print('global message', message)
 enclosing_msg()
 print('global message', message)
+
+
+
+import time
+def make_timer():
+    last_called= None;
+    
+    def elapsed():
+        nonlocal last_called; #Non Local 
+        now = time.time();
+        if last_called is None: #One time initialization
+            last_called = now;
+            return None;
+        result = now - last_called-1;
+        return result;
+    
+    return elapsed;
+
+
+t1 = make_timer();
+print(t1())
+print(t1())
+print(t1())
+
+    

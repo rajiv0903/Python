@@ -3,6 +3,12 @@ Created on Aug 7, 2018
 @author: rajiv
 '''
 
+
+#Local- Inside the current function
+#Enclosing- Any and all enclosing functions
+#Global- Top-level of the module
+#Built-in- Provided by the builtins module
+
 count = 0
 
 def show_count():

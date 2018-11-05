@@ -2,6 +2,11 @@
 Created on Aug 6, 2018
 @author: rajiv
 '''
+import math;
+from math import factorial as fact
+
+print(fact(5))
+
 # Conditional True
 if True:
     print("It's true!")
