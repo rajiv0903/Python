@@ -1,4 +1,6 @@
+import contextlib
 class Connection:
+
     def __init__(self):
         self.xid = 0
 
@@ -14,7 +16,9 @@ class Connection:
     def _rollback_transaction(self, xid):
         print('rolling back transaction', xid)
 
+
 class Transaction:
+
     def __init__(self, conn, read_only=True):
         self.conn = conn
         self.xid = conn._start_transaction(read_only=read_only)
@@ -25,15 +29,15 @@ class Transaction:
     def rollback(self):
         self.conn._rollback_transaction(self.xid)
 
-# @contextlib.contextmanager
-# def start_transaction(connection, read_only=True):
-#     xid = connection.start_transaction(read_only=read_only)
-#     tx = Transaction(connection, xid)
 
-#     try:
-#         yield tx
-#     except Exception:
-#         tx.rollback()
-#         raise
-
-#     tx.commit()
+@contextlib.contextmanager
+def start_transaction(connection, read_only=True):
+    xid = connection._start_transaction(read_only=read_only)
+    tx = Transaction(connection, xid)
+ 
+    try:
+        yield tx
+    except Exception:
+        tx.rollback()
+        raise
+    tx.commit()

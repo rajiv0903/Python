@@ -25,7 +25,7 @@ class SortedSet(Sequence, Set):
     def __iter__(self):
         return iter(self._items)
 
-    #Iterable Protocol
+    #Iterable Protocol for slicing or indexing 
     def __getitem__(self, index):
         result = self._items[index]
         return SortedSet(result) if isinstance(index, slice) else result

@@ -1,6 +1,5 @@
 import functools
 
-
 def noop(f):
     @functools.wraps(f)
     def noop_wrapper():

@@ -11,5 +11,6 @@ def lookups():
     except LookupError:
         print("Handled KeyError")
 
+
 if __name__ == '__main__':
     lookups()

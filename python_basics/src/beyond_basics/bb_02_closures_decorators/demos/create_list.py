@@ -9,6 +9,7 @@ def check_non_negative(index):
     return validator
 
 
-@check_non_negative(1)
+@check_non_negative(1) # It is same as @validator
 def create_list(value, size):
     return [value] * size
+

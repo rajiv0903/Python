@@ -1,10 +1,7 @@
 '''
 Created on Oct 30, 2018
-
 @author: rajiv
 '''
-
-
 class LoggingContextManager:
     def __enter__(self):
         return 'Hello, Rajiv!';

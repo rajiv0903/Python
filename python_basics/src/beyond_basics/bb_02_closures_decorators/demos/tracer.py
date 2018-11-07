@@ -15,3 +15,4 @@ tracer = Trace()
 @tracer
 def rotate_list(l):
     return l[1:] + [l[0]]
+
