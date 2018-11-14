@@ -9,7 +9,7 @@ class Vector:
         self.__dict__.update(private_coords)
 
     def __getattr__(self, name):
-        print(name)
+        print('name=',name)
 
     def __repr__(self):
         return "{}({})".format(self.__class__.__name__,

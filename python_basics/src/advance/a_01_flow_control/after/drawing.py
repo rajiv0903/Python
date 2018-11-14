@@ -64,18 +64,21 @@ def draw(shape):
 
 @draw.register(Circle)
 def _(shape):
-    print("\u25CF" if shape.solid else "\u25A1")
+    #print("\u25CF" if shape.solid else "\u25A1")
+    print("Bold Circle" if shape.solid else "Circle")
 
 
 @draw.register(Parallelogram)
 def _(shape):
-    print("\u25B0" if shape.solid else "\u25B1")
+    #print("\u25B0" if shape.solid else "\u25B1")
+    print("Bold Parallelogram" if shape.solid else "Parallelogram")
 
 
 @draw.register(Triangle)
 def _(shape):
     # Draw a triangle
-    print("\u25B2" if shape.solid else "\u25B3")
+    #print("\u25B2" if shape.solid else "\u25B3")
+    print("Bold Triangle" if shape.solid else "Triangle")
 
 def circle_intersects_circle(circle, shape):
     pass
@@ -89,7 +92,7 @@ def circle_intersects_triangle(circle, shape):
 
 def main():
     shapes = [Circle(center=(0, 0), radius=5, solid=False),
-              Parallelogram(pa=(0, 0), pb=(2, 0), pc=(1, 1), solid=False),
+              Parallelogram(pa=(0, 0), pb=(2, 0), pc=(1, 1), solid=True),
               Triangle(pa=(0, 0), pb=(1, 2), pc=(2, 0), solid=True)]
 
     for shape in shapes:

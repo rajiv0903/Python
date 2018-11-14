@@ -1,6 +1,7 @@
 
 from weakref import WeakKeyDictionary
-from tracing import TracingMeta
+from advance.a_06_metaclass.tracing import TracingMeta
+
 
 class Named:
 
@@ -98,6 +99,7 @@ def make_planets():
                   surface_temperature_kelvin=210)
 
     return mercury, venus, earth, mars
+
 
 if __name__ == '__main__':
     make_planets()

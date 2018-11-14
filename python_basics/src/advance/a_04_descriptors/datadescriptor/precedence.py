@@ -10,6 +10,7 @@ class DataDescriptor:
               .format(self, instance, value))
 
 
+#Read Only
 class NonDataDescriptor:
 
     def __get__(self, instance, owner):

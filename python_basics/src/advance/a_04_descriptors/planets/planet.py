@@ -44,6 +44,7 @@ class Planet:
             raise ValueError("Cannot set empty Planet.name")
         self._name = value
 
+    # Property Descriptor
     radius_metres = Positive()
     mass_kilograms = Positive()
     orbital_period_seconds = Positive()
@@ -78,6 +79,7 @@ def main():
 
     return mercury, venus, earth, mars
 
+
 if __name__ == '__main__':
-  mercury, venus, earth, mars = main()
-  print(mercury.mass_kilograms)
+    mercury, venus, earth, mars = main()
+    print(mercury.mass_kilograms)
